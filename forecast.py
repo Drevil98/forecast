@@ -18,6 +18,7 @@ def send_echo(message):
     windLNR = round(int(windLN))
     windSPR = round(int(windSP))
     LN = 'N'
+    a = 'a'
     statusD = w.get_detailed_status()
     # Wind direction:
     if int(windLN) > 0 and int(windLN) < 90:

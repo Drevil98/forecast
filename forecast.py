@@ -29,13 +29,13 @@ def send_echo(message):
         LN = 'северовосточный'
     elif int(windLN) > 270 and int(windLN) < 360:
         LN = 'юговосточный'
-    elif int(windLN) = 180:
+    elif int(windLN) == 180:
         LN = 'северный'
-    elif int(windLN) = 270:
+    elif int(windLN) == 270:
         LN = 'восточный'
-    elif int(windLN) = 0 or int(windLN) = 360:
+    elif int(windLN) == 0 or int(windLN) == 360:
         LN = 'южный'
-    elif int(windLN) = 90:
+    elif int(windLN) == 90:
         LN = 'западный'
     # Text forecast:    
     if tempR < 10:

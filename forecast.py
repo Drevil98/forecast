@@ -15,6 +15,7 @@ def send_echo(message):
     tempR = round(temp)
     windSP = w.get_wind()['speed']
     windLN = w.get_wind()['deg']
+    windLNR = round(int(windLN))
     LN = 'N'
     statusD = w.get_detailed_status()
     # Wind direction:

@@ -27,7 +27,7 @@ def send_echo(message):
         LN = 'северовосточный'
     elif int(windLN) > 270 and int(windLN) < 360:
         LN = 'юговосточный'
-    answer = (statusD + ', Температура: ' + str(tempR) + '°C , ветер ' + LN + ', ' + str(windLN) + '° , ' + str(windSP) + ' м/сек')
+    answer = (statusD + ', Температура: ' + str(tempR) + '°C , ветер ' + LN + ', ' + str(windLNR) + '° , ' + str(windSP) + ' м/сек')
     #bot.reply_to(message, answer.text)
     bot.send_message(message.chat.id, answer)
 bot.polling(none_stop = True)

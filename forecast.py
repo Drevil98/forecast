@@ -27,7 +27,15 @@ def send_echo(message):
         LN = 'северовосточный'
     elif int(windLN) > 270 and int(windLN) < 360:
         LN = 'юговосточный'
-    answer = (statusD + ', Температура: ' + str(tempR) + '°C , ветер ' + LN + ', ' + str(windLNR) + '° , ' + str(windSP) + ' м/сек')
+        
+    if tempR < 10:
+    a = 'На улице очень холодно, надевай всё что есть!'
+    elif tempR < 20:
+    a = 'На улице прохладно, одевайся теплее. =)'
+    else:
+    a = 'Снаружи тепло, надевай что хочешь. =)'
+    answer = (statusD + ', Температура: ' + str(tempR) + '°C , ветер ' + LN + ', ' + str(windLNR) + '° , ' + str(windSP) + ' м/сек' \n\n)
+    answer += a
     #bot.reply_to(message, answer.text)
     bot.send_message(message.chat.id, answer)
 bot.polling(none_stop = True)

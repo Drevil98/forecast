@@ -16,6 +16,7 @@ def send_echo(message):
     windSP = w.get_wind()['speed']
     windLN = w.get_wind()['deg']
     windLNR = round(int(windLN))
+    windSPR = round(int(windSP))
     LN = 'N'
     statusD = w.get_detailed_status()
     # Wind direction:
@@ -27,15 +28,13 @@ def send_echo(message):
         LN = 'северовосточный'
     elif int(windLN) > 270 and int(windLN) < 360:
         LN = 'юговосточный'
-        
+    # Text forecast:    
     if tempR < 10:
-    a = 'На улице очень холодно, надевай всё что есть!'
+    a = 'На улице очень холодно, надевай всё что есть!\:scream:\'
     elif tempR < 20:
-    a = 'На улице прохладно, одевайся теплее. =)'
+    a = 'На улице прохладно, одевайся теплее.\:wink:\'
     else:
-    a = 'Снаружи тепло, надевай что хочешь. =)'
-    answer = (statusD + ', Температура: ' + str(tempR) + '°C , ветер ' + LN + ', ' + str(windLNR) + '° , ' + str(windSP) + ' м/сек' '\n\n' +)
-    answer += a
-    #bot.reply_to(message, answer.text)
+    a = 'Снаружи тепло, надевай что хочешь.\:relaxed:\'
+    answer = (statusD + ', Температура: ' + str(tempR) + '°C , ветер ' + LN + ', ' + str(windLNR) + '° , ' + str(windSPR) + ' м/сек' '\n\n' + a)
     bot.send_message(message.chat.id, answer)
 bot.polling(none_stop = True)

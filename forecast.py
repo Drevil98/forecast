@@ -34,7 +34,7 @@ def send_echo(message):
     a = 'На улице прохладно, одевайся теплее. =)'
     else:
     a = 'Снаружи тепло, надевай что хочешь. =)'
-    answer = (statusD + ', Температура: ' + str(tempR) + '°C , ветер ' + LN + ', ' + str(windLNR) + '° , ' + str(windSP) + ' м/сек' \n\n)
+    answer = (statusD + ', Температура: ' + str(tempR) + '°C , ветер ' + LN + ', ' + str(windLNR) + '° , ' + str(windSP) + ' м/сек' '\n\n' +)
     answer += a
     #bot.reply_to(message, answer.text)
     bot.send_message(message.chat.id, answer)

@@ -9,7 +9,10 @@ bot = telebot.TeleBot("784391239:AAGv46dDbwLRsmrTnD0lXXMWqdPS9McwVpg")
 
 @bot.message_handler(content_types=['text'])
 def send_echo(message):
-    observation = owm.weather_at_place(message.text)
+    try:
+        observation = owm.weather_at_place(message.text)
+    except:
+        observation = owm.weather_at_place('Moscow')
     w = observation.get_weather()
     temp = w.get_temperature('celsius')['temp']
     tempR = round(temp)

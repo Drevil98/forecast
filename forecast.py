@@ -47,6 +47,6 @@ def send_echo(message):
         a = 'На улице прохладно, одевайся теплее. ;)'
     else:
         a = 'Снаружи тепло, надевай что хочешь. =)'
-    answer = (statusD + ', Температура: ' + str(tempR) + '°C , ветер ' + LN + ', ' + str(windLNR) + '° , ' + str(windSPR) + ' м/сек' '\n' + a)
+    answer = ('На улице ' + statusD + ', Температура: ' + str(tempR) + '°C , ветер ' + LN + ', ' + str(windLNR) + '° , ' + str(windSPR) + ' м/сек' '\n' + a)
     bot.send_message(message.chat.id, answer)
 bot.polling(none_stop = True)
